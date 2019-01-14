@@ -21,6 +21,7 @@ Searches through your email inbox, looking for job alerts that you've subscribed
 * [Dependencies](#dependencies-)
 * [Usage](#usage-)
 * [Development](#development-)
+* [Contributing](#contributing-)
 * [Meta](#meta-)
 
 ## Dependencies [&#x219F;](#contents)
@@ -67,6 +68,14 @@ make docker-test
 # And run the test frameworks
 ./scripts/test.sh
 ```
+
+
+## Contributing  [&#x219F;](#contents)
+
+* No contribution is too small!
+* Please submit as many fixes for typos and grammar bloopers as you can!
+* Try to limit each pull request to *one* change only.
+
 
 ## Meta [&#x219F;](#contents)
 
