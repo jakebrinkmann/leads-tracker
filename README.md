@@ -21,6 +21,7 @@ Searches through your email inbox, looking for job alerts that you've subscribed
 * [Dependencies](#dependencies-)
 * [Usage](#usage-)
 * [Development](#development-)
+* [Contributing](#contributing-)
 * [Meta](#meta-)
 
 ## Dependencies [&#x219F;](#contents)
@@ -68,11 +69,21 @@ make docker-test
 ./scripts/test.sh
 ```
 
+
+## Contributing  [&#x219F;](#contents)
+
+* No contribution is too small!
+* Please submit as many fixes for typos and grammar bloopers as you can!
+* Try to limit each pull request to *one* change only.
+
+
 ## Meta [&#x219F;](#contents)
 
 Jake Brinkmann – [@jakebrinkmann](https://twitter.com/jakebrinkmann) – jakebrinkmann@gmail.com
 
 Distributed under the MIT license. See ``LICENSE.txt`` for more information.
+
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit Messages](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#summary).
 
 [https://github.com/jakebrinkmann/leads-tracker](https://github.com/jakebrinkmann//leads-tracker)
 
