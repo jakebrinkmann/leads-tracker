@@ -17,7 +17,7 @@ COMMIT := $(or $(TRAVIS_COMMIT),`git rev-parse --short HEAD`)
 .PHONY: build
 build: ## Compiles the static web content.
 	cd hello-world; \
-		clojure --main cljs.main -O advanced --compile hello-world.core
+		clojure --main cljs.main --optimizations advanced --compile hello-world.core
 
 .PHONY: repl
 repl: ## Run an interactive repl
