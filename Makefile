@@ -94,12 +94,17 @@ dev: ## Start in a container with RW access to local files.
 
 
 .PHONY: clean
-clean: clean-docker ## Clean up everything.
+clean: clean-docker clean-cljs ## Clean up everything.
 
 .PHONY: clean-docker
 clean-docker:
-	@docker rmi -f $(shell docker images |grep $(REGISTRY)$(IMAGE) |awk '{print $$3}')
-	@docker rmi -f $(shell docker images --filter dangling=true -q)
+	@docker rmi -f $(shell docker images |grep $(REGISTRY)$(IMAGE) |awk '{print $$3}') || exit 0
+	@docker rmi -f $(shell docker images --filter dangling=true -q) || exit 0
+
+.PHONY: clean-cljs
+clean-cljs:
+	@find . -iname "?" -delete
+	@find . -iname ".cpcache" -delete
 
 .PHONY: all
 all: debug image tag push
