@@ -81,6 +81,18 @@ run: ## Run the Dockerfile in a container.
 		-p 127.0.0.1:9000:9000 \
 		$(TAG) || exit 0
 
+
+.PHONY: dev
+dev: ## Start in a container with RW access to local files.
+	docker run --rm -i $(DOCKER_FLAGS) \
+		--name $(IMAGE)-$(shell date +%M) \
+		-p 127.0.0.1:9000:9000 \
+		-v $(SOCKETLOC):$(SOCKETLOC):ro \
+		--user $(shell id -u) \
+		-v $(CURDIR):/home/docker/$(IMAGE):rw \
+		$(TAG) || exit 0
+
+
 .PHONY: clean
 clean: clean-docker ## Clean up everything.
 
