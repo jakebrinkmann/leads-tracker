@@ -14,6 +14,16 @@ TAG := $(shell if [ "$(BRANCH)" = "primary" ]; \
 # Additionally, include the git commit hash
 COMMIT := $(or $(TRAVIS_COMMIT),`git rev-parse --short HEAD`)
 
+.PHONY: build
+build: ## Compiles the static web content.
+	cd hello-world; \
+		clojure --main cljs.main -O advanced --compile hello-world.core
+
+.PHONY: repl
+repl: ## Run an interactive repl
+	cd hello-world; \
+		clojure --main cljs.main --compile hello-world.core --repl
+
 .PHONY: image
 image: ## Build the Dockerfile as an image.
 	# TODO: use `--squash` when it is no longer experimental
