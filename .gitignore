@@ -1,17 +1,8 @@
 # More templates available here: https://github.com/github/gitignore
 
-# Global ignores for editors
-.vscode
+# Java Artifacts
+*.jar
+*.class
 
-# Byte-compiled / optimized / DLL files
-__pycache__
-*.py[cod]
-*$py.class
-
-# Distribution / packaging
-*.egg-info
-
-# Unit test / coverage reports
-.coverage
-.hypothesis/
-.pytest_cache/
+# Clojure classpath caching
+.cpcache/
