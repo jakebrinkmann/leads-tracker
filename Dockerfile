@@ -7,21 +7,20 @@ ENV PROJECT=leads-tracker \
   USERNAME=docker \
   HOME=/home/docker
 
+# Install build-tools for using make
+RUN apt-get install -y \
+  build-essential
+
 # Include the source code
-COPY ./hello-world $HOME/$PROJECT/hello-world
-WORKDIR $HOME/$PROJECT/hello-world
+COPY . $HOME/$PROJECT
+WORKDIR $HOME/$PROJECT
 
 # Force a download of dependencies by compiling
 # (expected to be overwritten at container runtime)
-RUN clojure -m cljs.main -O advanced -c hello-world.core
+RUN make build
 
 # Run ClojureScript at startup, and start a repl
-CMD [ \
-  "clojure", \
-    "-m", "cljs.main", \
-    "-c", "hello-world.core", \
-    "-r" \
-  ]
+CMD make repl
 
 # By default, the output is served at port 9000
 EXPOSE 9000
